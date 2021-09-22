@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  border-bottom: 5px solid #424243;
+}
+
+.carrusel {
+  display: flex;
+}
+
+.horse {
+  margin: 0 auto;
+  background-color: #d4e6f1;
+  padding: 15px;
+}
