@@ -5,16 +5,63 @@ body {
 h1 {
   text-align: center;
 }
-h2 {
+
+h3 {
   border-bottom: 5px solid #424243;
+}
+
+header {
+  background-color: #2e354f;
+  padding: 45px 0;
+  color: white;
+}
+
+main {
+  width: 620px;
+  padding: 0 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a {
+  color: white;
+}
+
+a:hover,
+a:focus {
+  background-color: #d4b4cd;
 }
 
 .carrusel {
   display: flex;
+  margin-top: 25px;
+}
+
+.title {
+  background-color: #2e354f;
+  color: white;
+  padding: 5px 0;
+  text-align: center;
 }
 
 .horse {
   margin: 0 auto;
   background-color: #d4e6f1;
-  padding: 15px;
+  padding: 0 15px 15px;
+  width: 250px;
+}
+
+.btn {
+  margin: 10px;
+  padding: 10px 25px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.netlify-btn {
+  background-color: #8cc79f;
+}
+
+.git-btn {
+  background-color: black;
 }
