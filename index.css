@@ -38,7 +38,7 @@ a:focus {
 }
 
 .title {
-  background-color: #2e354f;
+  background-color: #34495e;
   color: white;
   padding: 5px 0;
   text-align: center;
@@ -59,9 +59,15 @@ a:focus {
 }
 
 .netlify-btn {
-  background-color: #8cc79f;
+  background-color: #138d75;
 }
 
 .git-btn {
   background-color: black;
+}
+
+.about {
+  color: whitesmoke;
+  margin-bottom: 10px;
+  background-color: #884ea0;
 }

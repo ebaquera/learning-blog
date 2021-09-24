@@ -1,0 +1,103 @@
+body {
+  text-align: center;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 21px;
+  background-color: #fbfcfc;
+}
+
+h1 {
+  font-size: 60px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 42px;
+  margin-top: 0;
+  border-top: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 36px;
+  margin-bottom: 0;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.container {
+  width: 570px;
+  margin: 0 auto;
+}
+
+.small {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.bold-h1 {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.bold-h2 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+a {
+  color: #99d930;
+  font-weight: 900;
+}
+
+a:hover,
+a:focus {
+  color: white;
+}
+
+header,
+section {
+  padding: 100px 0;
+  margin: 0;
+}
+
+.section-1,
+.section-3 {
+  background-color: #252525;
+  color: white;
+}
+
+.btn {
+  margin-top: 25px;
+  padding: 10px 25px;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #99d930;
+  color: #252525;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #131313;
+}
+
+.section-3 .btn:focus,
+.section-3 .btn:hover {
+  background-color: #fff;
+  color: #252525;
+}
+
+.bold-h1,
+.bold-h2,
+.small {
+  color: #99d930;
+}
