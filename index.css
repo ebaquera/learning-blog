@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Ubuntu", sans-serif;
+  background-color: whitesmoke;
 }
 h1 {
   text-align: center;
@@ -70,4 +71,13 @@ a:focus {
   color: whitesmoke;
   margin-bottom: 10px;
   background-color: #884ea0;
+}
+
+.inline-link {
+  color: black;
+  font-weight: bold;
+}
+
+.inline-link:visited {
+  color: purple;
 }

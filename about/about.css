@@ -57,6 +57,7 @@ p {
 a {
   color: #99d930;
   font-weight: 900;
+  cursor: pointer;
 }
 
 a:hover,
