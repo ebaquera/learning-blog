@@ -21,12 +21,13 @@ body {
 
 .snake {
   background-color: #121212;
+  border-radius: 5px;
 }
 
 .apple {
-  background-color: blue;
-}
-
-.snake-head {
-  background-color: thistle;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #121212;
 }

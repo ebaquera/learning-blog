@@ -27,9 +27,6 @@ function createGrid() {
 createGrid();
 
 currentSnake.forEach((index) => squares[index].classList.add("snake"));
-// for (let i = 0; i < currentSnake.length; i++) {
-//   squares[i].classList.add("snake");
-// }
 
 function startGame() {
   currentSnake.forEach((index) => squares[index].classList.remove("snake"));
@@ -52,7 +49,6 @@ function gameOver() {
 }
 
 function move() {
-  console.log(currentSnake[0] - width < 0, direction === -width);
   if (
     (currentSnake[0] + width >= width * width && direction === width) || //if snake has hit bottom
     (currentSnake[0] - width < 0 && direction === -width) || //if snake has hit top
@@ -89,7 +85,6 @@ function move() {
   }
 
   squares[currentSnake[0]].classList.add("snake");
-  //adds styling
 }
 
 function generateApple() {
