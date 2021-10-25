@@ -11,6 +11,7 @@ let intervalTime = 1000;
 const speed = 0.9;
 let timerId = 0;
 const msg = document.getElementById("message");
+let highscores = document.querySelector(".high-scores");
 
 function createGrid() {
   for (let i = 0; i < width * width; i++) {
@@ -46,6 +47,8 @@ function startGame() {
 function gameOver() {
   clearInterval(timerId);
   msg.textContent = "Game over!";
+  startButton.textContent = "Restart";
+  UpdateScore();
 }
 
 function move() {
@@ -121,3 +124,95 @@ function control(event) {
 
 document.addEventListener("keydown", control);
 startButton.addEventListener("click", startGame);
+
+function HighScores() {
+  if (typeof Storage !== "undefined") {
+    let scores = false;
+    if (localStorage["high-scores"]) {
+      highscores.style.display = "block";
+      highscores.innerHTML = "";
+      scores = JSON.parse(localStorage["high-scores"]);
+      scores = scores.sort(function (a, b) {
+        return parseInt(b) - parseInt(a);
+      });
+
+      for (let i = 0; i < 10; i++) {
+        let s = scores[i];
+        let fragment = document.createElement("li");
+        fragment.innerHTML = typeof s != "undefined" ? s : "";
+        highscores.appendChild(fragment);
+      }
+    }
+  } else {
+    highscores.style.display = "none";
+  }
+}
+
+function UpdateScore() {
+  if (typeof Storage !== "undefined") {
+    let current = parseInt(score.innerHTML);
+    let scores = false;
+    if (localStorage["high-scores"]) {
+      scores = JSON.parse(localStorage["high-scores"]);
+      scores = scores.sort(function (a, b) {
+        return parseInt(b) - parseInt(a);
+      });
+
+      for (var i = 0; i < 10; i++) {
+        let s = parseInt(scores[i]);
+
+        let val = !isNaN(s) ? s : 0;
+        if (current > val) {
+          val = current;
+          scores.splice(i, 0, parseInt(current));
+          break;
+        }
+      }
+
+      scores.length = 10;
+      localStorage["high-scores"] = JSON.stringify(scores);
+    } else {
+      let scores = new Array();
+      scores[0] = current;
+      localStorage["high-scores"] = JSON.stringify(scores);
+    }
+
+    HighScores();
+  }
+}
+
+// function populateTable() {
+//   scoreList.innerHTML = hiscores
+//     .map((row) => {
+//       return `<tr><td>${row.clicker}</td><td>${row.score}</tr>`;
+//     })
+//     .join(" ");
+// }
+
+// function checkScore() {
+//   let worstScore = 0;
+//   if (highscores.length > 4) {
+//     worstScore = hiscores[hiscores.length - 1].score;
+//   }
+//   if (score > worstScore) {
+//     const clicker = window.prompt(`${score} – Top score! What's your name?`);
+//     hiscores.push({ score, clicker });
+//   }
+
+//   hiscores.sort((a, b) => (a.score > b.score ? -1 : 1));
+
+//   if (hiscores.length > 5) {
+//     hiscores.pop();
+//   }
+
+//   populateTable();
+//   localStorage.setItem("hiscores", JSON.stringify(hiscores));
+// }
+
+// function clearScores() {
+//   hiscores.splice(0, hiscores.length);
+//   localStorage.setItem("hiscores", JSON.stringify(hiscores));
+//   populateTable(hiscores, scoreList);
+// }
+
+// populateTable();
