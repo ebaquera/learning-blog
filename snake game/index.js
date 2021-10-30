@@ -1,6 +1,7 @@
 const grid = document.querySelector(".grid");
 const startButton = document.getElementById("start");
 const score = document.getElementById("score");
+const clearBtn = document.getElementById("clear-store");
 let squares = [];
 let currentSnake = [2, 1, 0];
 let direction = 1;
@@ -42,6 +43,7 @@ function startGame() {
   timerId = setInterval(move, intervalTime);
   generateApple();
   msg.textContent = "";
+  HighScores();
 }
 
 function gameOver() {
@@ -144,13 +146,13 @@ function HighScores() {
       }
     }
   } else {
-    highscores.style.display = "none";
+    highscores.style.display = "block";
   }
 }
 
 function UpdateScore() {
   if (typeof Storage !== "undefined") {
-    let current = parseInt(score.innerHTML);
+    let current = parseInt(scoreSum);
     let scores = false;
     if (localStorage["high-scores"]) {
       scores = JSON.parse(localStorage["high-scores"]);
@@ -181,38 +183,9 @@ function UpdateScore() {
   }
 }
 
-// function populateTable() {
-//   scoreList.innerHTML = hiscores
-//     .map((row) => {
-//       return `<tr><td>${row.clicker}</td><td>${row.score}</tr>`;
-//     })
-//     .join(" ");
-// }
+function clearStorage() {
+  localStorage.clear();
+  HighScores();
+}
 
-// function checkScore() {
-//   let worstScore = 0;
-//   if (highscores.length > 4) {
-//     worstScore = hiscores[hiscores.length - 1].score;
-//   }
-//   if (score > worstScore) {
-//     const clicker = window.prompt(`${score} – Top score! What's your name?`);
-//     hiscores.push({ score, clicker });
-//   }
-
-//   hiscores.sort((a, b) => (a.score > b.score ? -1 : 1));
-
-//   if (hiscores.length > 5) {
-//     hiscores.pop();
-//   }
-
-//   populateTable();
-//   localStorage.setItem("hiscores", JSON.stringify(hiscores));
-// }
-
-// function clearScores() {
-//   hiscores.splice(0, hiscores.length);
-//   localStorage.setItem("hiscores", JSON.stringify(hiscores));
-//   populateTable(hiscores, scoreList);
-// }
-
-// populateTable();
+clearBtn.addEventListener("click", clearStorage());

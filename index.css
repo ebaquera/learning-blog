@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: "Ubuntu", sans-serif;
   background-color: whitesmoke;
 }
@@ -18,7 +18,7 @@ header {
 }
 
 main {
-  width: 620px;
+  width: 90%;
   padding: 0 40px;
   margin: 0 auto;
   text-align: center;
